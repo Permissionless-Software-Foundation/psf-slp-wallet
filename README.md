@@ -1,22 +1,23 @@
-# psf-bch-wallet
+# psf-slp-wallet
 
-This is the third major version (v3) of psf-bch-wallet command-line wallet for Bitcoin Cash (BCH) and SLP tokens.
+This is a command-line interface (CLI) application for creating and managing Simple Ledger Protocol (SLP) tokens.
 
-Version 2 is archived in the [psf-bch-wallet-v2](https://github.com/Permissionless-Software-Foundation/psf-bch-wallet-v2) repository.
+This is a fork of [psf-bch-wallet](https://github.com/Permissionless-Software-Foundation/psf-bch-wallet). This CLI has all the same commands as that one, plus additional commands for managing SLP tokens.
+
 
 ## Installation
 
 This software requires node.js v20 or higher. Instructions for installation:
 
-- `git clone https://github.com/Permissionless-Software-Foundation/psf-bch-wallet`
-- `cd psf-bch-wallet`
+- `git clone https://github.com/Permissionless-Software-Foundation/psf-slp-wallet`
+- `cd psf-slp-wallet`
 - `npm install`
 
 ## Usage
 
 ### Display Help
 
-- `node psf-bch-wallet.js help`
+- `node psf-slp-wallet.js help`
 
 ### Wallet Commands
 
@@ -24,7 +25,7 @@ This software requires node.js v20 or higher. Instructions for installation:
 
 Create a new BCH wallet:
 
-- `node psf-bch-wallet.js wallet-create -n wallet1 -d "My first wallet"`
+- `node psf-slp-wallet.js wallet-create -n wallet1 -d "My first wallet"`
 
 ##### Arguments
 - Use the `-n` flag to give your wallet a name (required).

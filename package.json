@@ -1,8 +1,8 @@
 {
-  "name": "psf-bch-wallet",
-  "version": "3.0.0",
+  "name": "psf-slp-wallet",
+  "version": "1.0.0",
   "description": "",
-  "main": "psf-bch-wallet.js",
+  "main": "psf-slp-wallet.js",
   "type": "module",
   "scripts": {
     "test": "c8 --reporter=text mocha --exit --timeout 15000 --recursive test/unit",
