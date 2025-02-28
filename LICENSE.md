@@ -1,4 +1,4 @@
-Copyright 2022-2024 Chris Troutner
+Copyright 2022-2025 Chris Troutner
 
 MIT LICENSE
 
