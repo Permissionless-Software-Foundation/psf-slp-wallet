@@ -1,0 +1,38 @@
+{
+  "name": "psf-bch-wallet",
+  "version": "3.0.0",
+  "description": "",
+  "main": "psf-bch-wallet.js",
+  "type": "module",
+  "scripts": {
+    "test": "c8 --reporter=text mocha --exit --timeout 15000 --recursive test/unit",
+    "lint": "standard --env mocha --fix",
+    "coverage": "c8 --reporter=html mocha --exit --timeout 15000 --recursive test/unit/"
+  },
+  "author": "Chris Troutner",
+  "license": "MIT",
+  "dependencies": {
+    "bch-token-sweep": "2.2.1",
+    "cli-table": "0.3.11",
+    "collect.js": "4.36.1",
+    "commander": "12.1.0",
+    "minimal-slp-wallet": "5.12.1",
+    "shelljs": "0.8.5"
+  },
+  "devDependencies": {
+    "c8": "10.1.2",
+    "chai": "5.1.1",
+    "mocha": "10.7.3",
+    "semantic-release": "24.1.2",
+    "sinon": "19.0.2",
+    "standard": "17.1.2"
+  },
+  "release": {
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": false
+      }
+    ]
+  }
+}
