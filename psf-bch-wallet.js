@@ -16,6 +16,7 @@ import SendTokens from './src/commands/send-tokens.js'
 import WalletSweep from './src/commands/wallet-sweep.js'
 import MsgSign from './src/commands/msg-sign.js'
 import MsgVerify from './src/commands/msg-verify.js'
+import TokenInfo from './src/commands/token-info.js'
 
 // Instantiate the subcommands
 const walletCreate = new WalletCreate()
@@ -27,7 +28,7 @@ const sendTokens = new SendTokens()
 const walletSweep = new WalletSweep()
 const msgSign = new MsgSign()
 const msgVerify = new MsgVerify()
-
+const tokenInfo = new TokenInfo()
 const program = new Command()
 
 program
@@ -90,5 +91,10 @@ program.command('msg-verify')
   .option('-m, --msg <string>', 'Cleartext message that was signed')
   .option('-a, --addr <string>', 'BCH address generated from private key that signed the message')
   .action(msgVerify.run)
+
+program.command('token-info')
+  .description('Get information about a token.')
+  .option('-t, --tokenId <string>', 'The token ID of the token to get information about')
+  .action(tokenInfo.run)
 
 program.parseAsync(process.argv)
