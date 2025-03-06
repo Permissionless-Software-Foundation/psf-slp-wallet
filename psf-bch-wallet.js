@@ -17,6 +17,7 @@ import WalletSweep from './src/commands/wallet-sweep.js'
 import MsgSign from './src/commands/msg-sign.js'
 import MsgVerify from './src/commands/msg-verify.js'
 import TokenInfo from './src/commands/token-info.js'
+import TokenTxHistory from './src/commands/token-tx-history.js'
 
 // Instantiate the subcommands
 const walletCreate = new WalletCreate()
@@ -30,6 +31,7 @@ const msgSign = new MsgSign()
 const msgVerify = new MsgVerify()
 const tokenInfo = new TokenInfo()
 const program = new Command()
+const tokenTxHistory = new TokenTxHistory()
 
 program
   // Define the psf-bch-wallet app options
@@ -96,5 +98,10 @@ program.command('token-info')
   .description('Get information about a token.')
   .option('-t, --tokenId <string>', 'The token ID of the token to get information about')
   .action(tokenInfo.run)
+
+program.command('token-tx-history')
+  .description('Get the transaction history for a token.')
+  .option('-t, --tokenId <string>', 'The token ID of the token to get the transaction history for')
+  .action(tokenTxHistory.run)
 
 program.parseAsync(process.argv)
