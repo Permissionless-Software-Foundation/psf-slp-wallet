@@ -6,18 +6,14 @@
 
 // Global npm libraries
 import BchWallet from 'minimal-slp-wallet'
-import axios from 'axios'
 
 // Local libraries
-import WalletUtil from '../lib/wallet-util.js'
 import config from '../../config/index.js'
 
 class TokenInfo {
   constructor () {
     // Encapsulate dependencies.
-    this.walletUtil = new WalletUtil()
     this.BchWallet = BchWallet
-    this.axios = axios
     this.config = config
     // Bind 'this' object to all subfunctions.
     this.run = this.run.bind(this)
