@@ -18,6 +18,7 @@ import MsgSign from './src/commands/msg-sign.js'
 import MsgVerify from './src/commands/msg-verify.js'
 import TokenInfo from './src/commands/token-info.js'
 import TokenTxHistory from './src/commands/token-tx-history.js'
+import TokenCreateFungible from './src/commands/token-create-fungible.js'
 
 // Instantiate the subcommands
 const walletCreate = new WalletCreate()
@@ -32,48 +33,55 @@ const msgVerify = new MsgVerify()
 const tokenInfo = new TokenInfo()
 const program = new Command()
 const tokenTxHistory = new TokenTxHistory()
-
+const tokenCreateFungible = new TokenCreateFungible()
 program
   // Define the psf-bch-wallet app options
   .name('psf-bch-wallet')
   .description('A command-line BCH and SLP token wallet.')
 
 // Define the wallet-create command
-program.command('wallet-create')
+program
+  .command('wallet-create')
   .description('Create a new wallet with name (-n <name>) and description (-d)')
   .option('-n, --name <string>', 'wallet name')
   .option('-d --description <string>', 'what the wallet is being used for')
   .action(walletCreate.run)
 
 // Define the wallet-list command
-program.command('wallet-list')
+program
+  .command('wallet-list')
   .description('List existing wallets')
   .action(walletList.run)
 
-program.command('wallet-addrs')
+program
+  .command('wallet-addrs')
   .description('List the different addresses for a wallet.')
   .option('-n, --name <string>', 'wallet name')
   .action(walletAddrs.run)
 
-program.command('wallet-balance')
+program
+  .command('wallet-balance')
   .description('Get balances in BCH and SLP tokens held by the wallet.')
   .option('-n, --name <string>', 'wallet name')
   .action(walletBalance.run)
 
-program.command('wallet-sweep')
+program
+  .command('wallet-sweep')
   .description('Sweep funds from a WIF private key')
   .option('-n, --name <string>', 'wallet name receiving BCH')
   .option('-w, --wif <string>', 'WIF private key to sweep')
   .action(walletSweep.run)
 
-program.command('send-bch')
+program
+  .command('send-bch')
   .description('Send BCH to an address')
   .option('-n, --name <string>', 'wallet name sending BCH')
   .option('-a, --addr <string>', 'address to send BCH to')
   .option('-q, --qty <string>', 'The quantity of BCH to send')
   .action(sendBch.run)
 
-program.command('send-tokens')
+program
+  .command('send-tokens')
   .description('Send SLP tokens to an address')
   .option('-n, --name <string>', 'wallet name sending BCH')
   .option('-a, --addr <string>', 'address to send BCH to')
@@ -81,27 +89,50 @@ program.command('send-tokens')
   .option('-t, --tokenId <string>', 'The token ID of the token to send')
   .action(sendTokens.run)
 
-program.command('msg-sign')
+program
+  .command('msg-sign')
   .description('Sign a message using the wallets private key')
   .option('-n, --name <string>', 'wallet to sign the message')
   .option('-m, --msg <string>', 'Message to sign')
   .action(msgSign.run)
 
-program.command('msg-verify')
+program
+  .command('msg-verify')
   .description('Verify a signature')
   .option('-s, --sig <string>', 'Signature')
   .option('-m, --msg <string>', 'Cleartext message that was signed')
-  .option('-a, --addr <string>', 'BCH address generated from private key that signed the message')
+  .option(
+    '-a, --addr <string>',
+    'BCH address generated from private key that signed the message'
+  )
   .action(msgVerify.run)
 
-program.command('token-info')
+program
+  .command('token-info')
   .description('Get information about a token.')
-  .option('-t, --tokenId <string>', 'The token ID of the token to get information about')
+  .option(
+    '-t, --tokenId <string>',
+    'The token ID of the token to get information about'
+  )
   .action(tokenInfo.run)
 
-program.command('token-tx-history')
+program
+  .command('token-tx-history')
   .description('Get the transaction history for a token.')
-  .option('-t, --tokenId <string>', 'The token ID of the token to get the transaction history for')
+  .option(
+    '-t, --tokenId <string>',
+    'The token ID of the token to get the transaction history for'
+  )
   .action(tokenTxHistory.run)
+
+program
+  .command('token-create-fungible')
+  .description('Create a new SLP Type1 fugible token.')
+  .option('-n, --walletName <string>', 'The name of the wallet')
+  .option('-m, --tokenName <string>', 'The name of the token')
+  .option('-t, --ticker <string>', 'The ticker of the token')
+  .option('-d, --decimals <number>', 'The number of decimals of the token')
+  .option('-q, --qty <number>', 'The quantity of tokens to create')
+  .action(tokenCreateFungible.run)
 
 program.parseAsync(process.argv)
