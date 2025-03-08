@@ -16,7 +16,7 @@
     "cli-table": "0.3.11",
     "collect.js": "4.36.1",
     "commander": "12.1.0",
-    "minimal-slp-wallet": "5.12.1",
+    "minimal-slp-wallet": "^5.13.2",
     "shelljs": "0.8.5"
   },
   "devDependencies": {

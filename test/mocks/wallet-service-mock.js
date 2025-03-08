@@ -19,6 +19,14 @@ class WalletService {
   async sendTx (hex) {
     return {}
   }
+
+  async getTokenData () {
+    return {}
+  }
+
+  async cid2json () {
+    return {}
+  }
 }
 
 // module.exports = WalletService
