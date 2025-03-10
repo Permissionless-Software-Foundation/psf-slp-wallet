@@ -8,6 +8,7 @@
 const config = {
   // The REST URL for the server used by minimal-slp-wallet.
   restURL: 'https://free-bch.fullstack.cash',
+  // restURL: 'https://dev-consumer.psfoundation.info',
 
   // consumer-api = web 3 Cash Stack (ipfs-bch-wallet-consumer)
   // rest-api = web 2 Cash Stack (bch-api)

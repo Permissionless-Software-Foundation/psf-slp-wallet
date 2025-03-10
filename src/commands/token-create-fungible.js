@@ -39,7 +39,7 @@ class TokenCreateFungible {
 
       return true
     } catch (err) {
-      console.log('Error in token-tx-history.js/run(): ', err.message)
+      console.log('Error in token-create-fungible.js/run(): ', err)
 
       return 0
     }

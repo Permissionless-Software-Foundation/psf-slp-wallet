@@ -133,6 +133,8 @@ program
   .option('-t, --ticker <string>', 'The ticker of the token')
   .option('-d, --decimals <number>', 'The number of decimals of the token')
   .option('-q, --qty <number>', 'The quantity of tokens to create')
+  .option('-u, --url <string>', '(optional) URL to attach to token (Used for immutable data)')
+  .option('-h, --hash <string>', '(optional) TX hash to attach to token (Used for mutable data)')
   .action(tokenCreateFungible.run)
 
 program.parseAsync(process.argv)
