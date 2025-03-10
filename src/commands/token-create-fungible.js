@@ -35,7 +35,7 @@ class TokenCreateFungible {
       const txid = await this.wallet.broadcast({ hex })
 
       console.log(`New token ${flags.ticker} created! Token ID: ${txid}`)
-      console.log(`https://slp-token.fullstack.cash/?tokenid=${txid}`)
+      console.log(`https://explorer.tokentiger.com/?tokenid=${txid}`)
 
       return true
     } catch (err) {

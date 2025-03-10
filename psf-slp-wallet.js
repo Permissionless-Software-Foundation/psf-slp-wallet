@@ -36,7 +36,7 @@ const tokenTxHistory = new TokenTxHistory()
 const tokenCreateFungible = new TokenCreateFungible()
 program
   // Define the psf-bch-wallet app options
-  .name('psf-bch-wallet')
+  .name('psf-slp-wallet')
   .description('A command-line BCH and SLP token wallet.')
 
 // Define the wallet-create command
