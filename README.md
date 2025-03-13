@@ -54,4 +54,16 @@ Create a new SLP Type1 fungible token.
 - Use the `-d` flag to specify the number of decimals of the token (required).
 - Use the `-q` flag to specify the quantity of tokens to create (required).
 
+#### Create a Group Token
 
+Create a new SLP Group token.
+
+- `node psf-slp-wallet.js token-create-group -n wallet1 -m "My Group Token" -t MYGT`
+
+##### Arguments
+- Use the `-n` flag to specify the name of the wallet (required).
+- Use the `-m` flag to specify the name of the token (required).
+- Use the `-t` flag to specify the ticker of the token (required).
+- Use the `-q` flag to specify the quantity of tokens to create (optional).
+- Use the `-u` flag to specify the url of tokens to create (optional).
+- Use the `-h` flag to specify the hash of tokens to create (optional).
