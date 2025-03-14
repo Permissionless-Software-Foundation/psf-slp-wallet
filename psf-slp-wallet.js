@@ -20,6 +20,7 @@ import TokenInfo from './src/commands/token-info.js'
 import TokenTxHistory from './src/commands/token-tx-history.js'
 import TokenCreateFungible from './src/commands/token-create-fungible.js'
 import TokenCreateGroup from './src/commands/token-create-group.js'
+import TokenCreateNFT from './src/commands/token-create-nft.js'
 
 // Instantiate the subcommands
 const walletCreate = new WalletCreate()
@@ -36,6 +37,8 @@ const program = new Command()
 const tokenTxHistory = new TokenTxHistory()
 const tokenCreateFungible = new TokenCreateFungible()
 const tokenCreateGroup = new TokenCreateGroup()
+const tokenCreateNFT = new TokenCreateNFT()
+
 program
   // Define the psf-bch-wallet app options
   .name('psf-slp-wallet')
@@ -149,5 +152,16 @@ program
   .option('-u, --url <string>', '(optional) URL to attach to token (Used for immutable data)')
   .option('-h, --hash <string>', '(optional) TX hash to attach to token (Used for mutable data)')
   .action(tokenCreateGroup.run)
+
+program
+  .command('token-create-nft')
+  .description('Create a new SLP NFT token.')
+  .option('-n, --walletName <string>', 'The name of the wallet')
+  .option('-m, --tokenName <string>', 'The name of the token')
+  .option('-t, --ticker <string>', 'The ticker of the token')
+  .option('-i, --tokenId <string>', 'Token ID of Group token to burn, to generate the NFT')
+  .option('-u, --url <string>', '(optional) URL to attach to token (Used for immutable data)')
+  .option('-h, --hash <string>', '(optional) TX hash to attach to token (Used for mutable data)')
+  .action(tokenCreateNFT.run)
 
 program.parseAsync(process.argv)

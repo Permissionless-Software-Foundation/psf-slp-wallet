@@ -67,3 +67,18 @@ Create a new SLP Group token.
 - Use the `-q` flag to specify the quantity of tokens to create (optional).
 - Use the `-u` flag to specify the url of tokens to create (optional).
 - Use the `-h` flag to specify the hash of tokens to create (optional).
+
+
+#### Create NFT
+
+Create a new NFT.
+
+- `node psf-slp-wallet.js token-create-nft -n wallet1 -m "My NFT" -t MNFT -i 9921cd7d19ca536e595f69a89fbc73e10cc446a7fe80acb3d78bd2b036997fe2`
+
+##### Arguments
+- Use the `-n` flag to specify the name of the wallet (required).
+- Use the `-m` flag to specify the name of the token (required).
+- Use the `-t` flag to specify the ticker of the token (required).
+- Use the `-i` flag to specify the Group token to burn, to generate the NFT (required).
+- Use the `-u` flag to specify the url of tokens to create (optional).
+- Use the `-h` flag to specify the hash of tokens to create (optional).
