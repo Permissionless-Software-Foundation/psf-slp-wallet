@@ -82,3 +82,15 @@ Create a new NFT.
 - Use the `-i` flag to specify the Group token to burn, to generate the NFT (required).
 - Use the `-u` flag to specify the url of tokens to create (optional).
 - Use the `-h` flag to specify the hash of tokens to create (optional).
+
+#### Mint Tokens
+
+Mint new Fungible (Type 1) or Group tokens.
+
+- `node psf-slp-wallet.js token-mint -n wallet1 -q 1 -t 1d542ac6b26a2c85a892b79b7ec39dfba5c731b95c644cf5aef75e580f5c7660`   
+
+##### Arguments
+- Use the `-n` flag to specify the name of the wallet (required).
+- Use the `-q` flag to specify the quantity of tokens to create (required).
+- Use the `-t` flag to specify the token ID of the token to mint (required).
+- Use the `-r` flag to specify the receiver of the new baton (optional).    
