@@ -94,3 +94,15 @@ Mint new Fungible (Type 1) or Group tokens.
 - Use the `-q` flag to specify the quantity of tokens to create (required).
 - Use the `-t` flag to specify the token ID of the token to mint (required).
 - Use the `-r` flag to specify the receiver of the new baton (optional).    
+
+#### Create Mutable Data Address (MDA)
+
+Create a new Mutable Data Address (MDA) for a token.
+
+- `node psf-slp-wallet.js token-mda-tx -n wallet1 -a bitcoincash:qr2u4f2dmva6yvf3npkd5lquryp09qk7gs5vxl423h`
+
+##### Arguments
+- Use the `-n` flag to specify the name of the wallet to pay for transaction (required).
+- Use the `-a` flag to specify the Mutable Data Address (MDA) (required).
+
+
