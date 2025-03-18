@@ -22,6 +22,7 @@ import TokenCreateFungible from './src/commands/token-create-fungible.js'
 import TokenCreateGroup from './src/commands/token-create-group.js'
 import TokenCreateNFT from './src/commands/token-create-nft.js'
 import TokenMint from './src/commands/token-mint.js'
+import TokenMdaTx from './src/commands/token-mda-tx.js'
 
 // Instantiate the subcommands
 const walletCreate = new WalletCreate()
@@ -40,6 +41,7 @@ const tokenCreateFungible = new TokenCreateFungible()
 const tokenCreateGroup = new TokenCreateGroup()
 const tokenCreateNFT = new TokenCreateNFT()
 const tokenMint = new TokenMint()
+const tokenMdaTx = new TokenMdaTx()
 
 program
   // Define the psf-bch-wallet app options
@@ -174,5 +176,12 @@ program
   .option('-t, --tokenId <string>', 'Token ID')
   .option('-r, --receiver <string>', '(optional) Receiver of new baton. Defaults to same wallet. <null> burns baton.')
   .action(tokenMint.run)
+
+program
+  .command('token-mda-tx')
+  .description('Create TXID for token mutable data')
+  .option('-n, --walletName <string>', 'The name of the wallet to pay for transaction')
+  .option('-a, --mda <string>', 'Mutable data address')
+  .action(tokenMdaTx.run)
 
 program.parseAsync(process.argv)
