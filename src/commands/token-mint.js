@@ -32,12 +32,12 @@ class TokenMint {
 
       const txid = await this.wallet.broadcast({ hex })
 
-      console.log(`New NFT ${flags.ticker} created! Token ID: ${txid}`)
+      console.log(`New NFT Minted! Token ID: ${txid}`)
       console.log(`https://explorer.tokentiger.com/?tokenid=${txid}`)
 
       return true
     } catch (err) {
-      console.log('Error in token-create-nft.js/run(): ', err)
+      console.log('Error in token-mint.js/run(): ', err)
       return 0
     }
   }

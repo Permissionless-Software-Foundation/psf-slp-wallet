@@ -1,5 +1,5 @@
 /*
-Unit tests for the token-create-nft command.
+Unit tests for the token-mint command.
 */
 
 // Global npm libraries
