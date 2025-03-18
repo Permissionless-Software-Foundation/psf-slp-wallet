@@ -21,6 +21,7 @@ import TokenTxHistory from './src/commands/token-tx-history.js'
 import TokenCreateFungible from './src/commands/token-create-fungible.js'
 import TokenCreateGroup from './src/commands/token-create-group.js'
 import TokenCreateNFT from './src/commands/token-create-nft.js'
+import TokenMint from './src/commands/token-mint.js'
 
 // Instantiate the subcommands
 const walletCreate = new WalletCreate()
@@ -38,6 +39,7 @@ const tokenTxHistory = new TokenTxHistory()
 const tokenCreateFungible = new TokenCreateFungible()
 const tokenCreateGroup = new TokenCreateGroup()
 const tokenCreateNFT = new TokenCreateNFT()
+const tokenMint = new TokenMint()
 
 program
   // Define the psf-bch-wallet app options
@@ -163,5 +165,14 @@ program
   .option('-u, --url <string>', '(optional) URL to attach to token (Used for immutable data)')
   .option('-h, --hash <string>', '(optional) TX hash to attach to token (Used for mutable data)')
   .action(tokenCreateNFT.run)
+
+program
+  .command('token-mint')
+  .description('Mint new Fungible (Type 1) or Group tokens.')
+  .option('-n, --walletName <string>', 'The name of the wallet')
+  .option('-q, --qty <string>', 'The quantity of tokens to create.')
+  .option('-t, --tokenId <string>', 'Token ID')
+  .option('-r, --receiver <string>', '(optional) Receiver of new baton. Defaults to same wallet. <null> burns baton.')
+  .action(tokenMint.run)
 
 program.parseAsync(process.argv)
