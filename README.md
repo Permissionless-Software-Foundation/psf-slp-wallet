@@ -4,6 +4,9 @@ This is a command-line interface (CLI) application for creating and managing Sim
 
 This is a fork of [psf-bch-wallet](https://github.com/Permissionless-Software-Foundation/psf-bch-wallet). This CLI has all the same commands as that one, plus additional commands for managing SLP tokens.
 
+## Tutorial Videos
+
+- [Create a simple fungible token](https://www.youtube.com/watch?v=gjgeUIWekoA)
 
 ## Installation
 
