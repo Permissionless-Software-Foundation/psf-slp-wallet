@@ -78,7 +78,7 @@ class TokenMdaTx {
   displayData (flags, txid) {
     console.log('Mutable data updated!')
     console.log(`TXID: ${txid}`)
-    console.log(`https://explorer.tokentiger.com/transactions/?txid=${txid}`)
+    console.log(`https://bch.loping.net/tx/${txid}`)
 
     return true
   }
