@@ -17,7 +17,8 @@
     "collect.js": "4.36.1",
     "commander": "12.1.0",
     "minimal-slp-wallet": "5.13.2",
-    "shelljs": "0.8.5"
+    "shelljs": "0.8.5",
+    "slp-mutable-data": "2.3.16"
   },
   "devDependencies": {
     "c8": "10.1.2",

@@ -4,7 +4,7 @@
  the controller of mutable data for a token. This generates a TXID which is
  used in the tokens 'documentHash' field when creating the token.
 
- MDA is an acrynym for 'Mutable Data Address'
+ MDA is an acronym for 'Mutable Data Address'
 
  PS002 specification for mutable data:
  https://github.com/Permissionless-Software-Foundation/specifications/blob/master/ps002-slp-mutable-data.md

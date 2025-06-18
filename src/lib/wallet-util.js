@@ -22,6 +22,7 @@ class WalletUtil {
 
     // Bind 'this' object to all subfunctions.
     this.saveWallet = this.saveWallet.bind(this)
+    this.instanceWallet = this.instanceWallet.bind(this)
   }
 
   // Save wallet data to a JSON file.
