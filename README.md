@@ -33,6 +33,7 @@ Get information about an SLP token. Outputs a JSON object with token metadata.
 ##### Arguments
 - Use the `-t` flag to specify the token ID of the token to get information about (required).
 
+---
 
 #### Token Transaction History
 
@@ -43,6 +44,7 @@ Get the transaction history for an SLP token. Outputs a JSON object with the tra
 ##### Arguments
 - Use the `-t` flag to specify the token ID of the token to get the transaction history for (required).
 
+---
 
 #### Create a Fungible Token
 
@@ -56,6 +58,8 @@ Create a new SLP Type1 fungible token.
 - Use the `-t` flag to specify the ticker of the token (required).
 - Use the `-d` flag to specify the number of decimals of the token (required).
 - Use the `-q` flag to specify the quantity of tokens to create (required).
+
+---
 
 #### Create a Group Token
 
@@ -71,6 +75,7 @@ Create a new SLP Group token.
 - Use the `-u` flag to specify the url of tokens to create (optional).
 - Use the `-h` flag to specify the hash of tokens to create (optional).
 
+---
 
 #### Create NFT
 
@@ -86,6 +91,8 @@ Create a new NFT.
 - Use the `-u` flag to specify the url of tokens to create (optional).
 - Use the `-h` flag to specify the hash of tokens to create (optional).
 
+---
+
 #### Mint Tokens
 
 Mint new Fungible (Type 1) or Group tokens.
@@ -98,6 +105,8 @@ Mint new Fungible (Type 1) or Group tokens.
 - Use the `-t` flag to specify the token ID of the token to mint (required).
 - Use the `-r` flag to specify the receiver of the new baton (optional).    
 
+---
+
 #### Create Mutable Data Address (MDA)
 
 Create a new Mutable Data Address (MDA) for a token.
@@ -108,4 +117,16 @@ Create a new Mutable Data Address (MDA) for a token.
 - Use the `-n` flag to specify the name of the wallet to pay for transaction (required).
 - Use the `-a` flag to specify the Mutable Data Address (MDA) (required).
 
+---
+
+#### Update Token Mutable Data
+
+Update the token to point to a new version of the mutable data.
+
+- `node psf-slp-wallet.js token-update -n wallet1 -c ipfs://bafkreifhtcnmf577q2s5lfr46ax5qf2jnk7oy3azu5x7ceab6xajcccl3u`
+
+##### Arguments
+
+- Use the `-n` flag to specify the name of the wallet controlling the MDA.
+- Use the `-c` flag to specify the IPFS hash of the new mutable data file.
 
