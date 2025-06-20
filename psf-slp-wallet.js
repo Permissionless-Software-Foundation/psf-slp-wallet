@@ -23,6 +23,7 @@ import TokenCreateGroup from './src/commands/token-create-group.js'
 import TokenCreateNFT from './src/commands/token-create-nft.js'
 import TokenMint from './src/commands/token-mint.js'
 import TokenMdaTx from './src/commands/token-mda-tx.js'
+import TokenUpdate from './src/commands/token-update.js'
 
 // Instantiate the subcommands
 const walletCreate = new WalletCreate()
@@ -42,6 +43,7 @@ const tokenCreateGroup = new TokenCreateGroup()
 const tokenCreateNFT = new TokenCreateNFT()
 const tokenMint = new TokenMint()
 const tokenMdaTx = new TokenMdaTx()
+const tokenUpdate = new TokenUpdate()
 
 program
   // Define the psf-bch-wallet app options
@@ -183,5 +185,12 @@ program
   .option('-n, --walletName <string>', 'The name of the wallet to pay for transaction')
   .option('-a, --mda <string>', 'Mutable data address')
   .action(tokenMdaTx.run)
+
+program
+  .command('token-update')
+  .description('Update the mutable data for a token')
+  .option('-n, --walletName <string>', 'The name of the wallet to pay for transaction')
+  .option('-c, --cid <string>', 'CID of new mutable data')
+  .action(tokenUpdate.run)
 
 program.parseAsync(process.argv)
