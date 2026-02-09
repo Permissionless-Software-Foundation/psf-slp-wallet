@@ -18,7 +18,7 @@ class TokenMdaTx {
     this.config = config
 
     // Bind 'this' object to all subfunctions.
-    this.bchjs = new BCHJS()
+    this.bchjs = new BCHJS({ restURL: this.config.restURL })
     this.run = this.run.bind(this)
     this.validateFlags = this.validateFlags.bind(this)
     this.openWallet = this.openWallet.bind(this)

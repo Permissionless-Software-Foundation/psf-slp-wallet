@@ -3,6 +3,7 @@
 */
 
 import BCHJS from '@psf/bch-js'
+import config from '../../config/index.js'
 
 class BchWallet {
   constructor () {
@@ -22,7 +23,7 @@ class BchWallet {
       description: ''
     }
 
-    this.bchjs = new BCHJS()
+    this.bchjs = new BCHJS({ restURL: config.restURL })
 
     // Environment variable is used by wallet-balance.unit.js to force an error.
     if (process.env.NO_UTXO) {
