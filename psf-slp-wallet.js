@@ -24,6 +24,7 @@ import TokenCreateNFT from './src/commands/token-create-nft.js'
 import TokenMint from './src/commands/token-mint.js'
 import TokenMdaTx from './src/commands/token-mda-tx.js'
 import TokenUpdate from './src/commands/token-update.js'
+import TokenBurn from './src/commands/token-burn.js'
 
 // Instantiate the subcommands
 const walletCreate = new WalletCreate()
@@ -44,6 +45,7 @@ const tokenCreateNFT = new TokenCreateNFT()
 const tokenMint = new TokenMint()
 const tokenMdaTx = new TokenMdaTx()
 const tokenUpdate = new TokenUpdate()
+const tokenBurn = new TokenBurn()
 
 program
   // Define the psf-bch-wallet app options
@@ -192,5 +194,13 @@ program
   .option('-n, --walletName <string>', 'The name of the wallet to pay for transaction')
   .option('-c, --cid <string>', 'CID of new mutable data')
   .action(tokenUpdate.run)
+
+program
+  .command('token-burn')
+  .description('Burn a specific quantity of SLP tokens.')
+  .option('-n, --walletName <string>', 'The name of the wallet')
+  .option('-q, --qty <number>', 'The quantity of tokens to burn')
+  .option('-t, --tokenId <string>', 'The token ID of the token to burn')
+  .action(tokenBurn.run)
 
 program.parseAsync(process.argv)
