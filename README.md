@@ -224,6 +224,19 @@ Mint new Fungible (Type 1) or Group tokens.
 
 ---
 
+#### Burn Tokens
+
+Burn a specific quantity of SLP Type1 fungible tokens.
+
+- `node psf-slp-wallet.js token-burn -n wallet1 -q 100 -t 1d542ac6b26a2c85a892b79b7ec39dfba5c731b95c644cf5aef75e580f5c7660`
+
+##### Arguments
+- Use the `-n` flag to specify the name of the wallet (required).
+- Use the `-q` flag to specify the quantity of tokens to burn (required).
+- Use the `-t` flag to specify the token ID of the token to burn (required).
+
+---
+
 #### Create Mutable Data Address (MDA)
 
 Create a new Mutable Data Address (MDA) for a token.
