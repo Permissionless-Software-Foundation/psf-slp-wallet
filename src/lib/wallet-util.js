@@ -56,6 +56,17 @@ class WalletUtil {
       advancedConfig.interface = this.config.interface
       advancedConfig.hdPath = walletData.hdPath
 
+      // Pass x402 payment protocol settings if configured.
+      if (this.config.x402wif) {
+        advancedConfig.wif = this.config.x402wif
+      }
+      if (this.config.paymentAmountSats) {
+        advancedConfig.paymentAmountSats = this.config.paymentAmountSats
+      }
+      if (this.config.bchServerURL) {
+        advancedConfig.bchServerURL = this.config.bchServerURL
+      }
+
       const bchWallet = new this.BchWallet(walletData.mnemonic, advancedConfig)
 
       await bchWallet.walletInfoPromise
